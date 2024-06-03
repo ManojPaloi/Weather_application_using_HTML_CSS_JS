@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("weather19");
+    backface-visibility: 30%;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    animation: fadeInBackground 2s ease-in-out;
+}
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #4c767748;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.342);
+    display: flex;
+    flex-direction: row;
+    animation: slideIn 1s ease-in-out;
+    padding: 1rem;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.wrapper {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons img {
+    width: 200px;
+    position: center;
+    animation: bounceIn 1s ease-in-out;
+}
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.img {
+    border-radius: 25px;
+    background-image: url("../img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transform: scale(1.03) perspective(200px);
+    animation: rotateIn 1s ease-in-out;
+}
+@keyframes rotateIn {
+    from {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+.img::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a3e4675 10%, #29404e6c 100%);
+    opacity: 1;
+    z-index: -1;
+    border-radius: 25px;
+}
+.info {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    opacity: 1;
+    animation: fadeInUp 1s ease-in-out;
+}
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.info img {
+    width: 80%;
+    object-fit: cover;
+}
+.info h2 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+.info h3 {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    margin: 0.5rem 0;
+}
+.temp {
+    font-size: 4rem;
+    font-weight: 800;
+}
+.content1 {
+    padding: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.content1 form {
+    margin: 1.5rem 0;
+    position: relative;
+}
+.content1 form input {
+    width: 84%;
+    outline: none;
+    background: transparent;
+    border: 1px solid #37474f;
+    border-radius: 5px;
+    padding: 0.7rem 1rem;
+    font-family: inherit;
+    color: black;
+    font-size: 1.5rem;
+    animation: inputFocus 1s forwards;
+}
+@keyframes inputFocus {
+    from {
+        border-color: #37474f;
+    }
+    to {
+        border-color: #31af85;
+    }
+}
+.content1 form button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 1rem 0.7rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background: #31af85;
+    color: #fff;
+    cursor: pointer;
+    animation: buttonHover 0.3s forwards;
+}
+@keyframes buttonHover {
+    from {
+        background: #31af85;
+    }
+    to {
+        background: #249c6b;
+    }
+}
+.day_info .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    animation: fadeInRight 1s ease-in-out;
+}
+@keyframes fadeInRight {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.day_info .content .title {
+    font-weight: 600;
+}
+.list_content ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 3rem 0rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 1rem;
+    animation: fadeInLeft 1s ease-in-out;
+}
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.list_content ul li {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in;
+    animation: fadeInScale 1s ease-in-out;
+}
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.list_content ul li:hover {
+    transform: scale(1.1);
+    background-color: #6cdfdf;
+    color: #0e1111;
+    box-shadow: 0 5px 15px rgba(43, 255, 0, 0.616);
+    cursor: pointer;
+}
+.list_content ul li img {
+    width: 50%;
+    object-fit: cover;
+    animation: spin 2s linear infinite;
+}
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+.icons.fadeIn {
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.7s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
